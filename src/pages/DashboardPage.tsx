@@ -37,8 +37,6 @@ const tabs = [
   'Parking',
 ];
 
-const dashboardTabIcons = ["", "", ""];
-
 const COLORS = {
   background: '#181A20',
   card: '#23252B',
