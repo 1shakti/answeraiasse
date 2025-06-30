@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FiX, FiSearch, FiRefreshCw } from 'react-icons/fi';
 import accordionArrow from '../assets/accordion-arrow.svg';
 import star from '../assets/star.svg';
+import reloadIcon from '../assets/reload.svg';
 
 // Figma color/typography constants
 const COLORS = {
@@ -406,7 +407,7 @@ export default function EditVariablesPanel({ onClose = () => {} }) {
                 Autofill
               </AutofillButton>
               <Button primary>
-                <FiRefreshCw size={18} />
+                <img src={reloadIcon} alt="reload" style={{ width: 18, height: 18 }} />
                 Rerun
               </Button>
             </SearchRow>
