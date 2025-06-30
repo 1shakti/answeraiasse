@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { useAuth } from '../context/AuthContext';
 import styled from 'styled-components';
 import EditVariablesPanel from '../components/EditVariablesPanel';
@@ -331,13 +331,6 @@ const KPICardTitle = styled.div`
   font-weight: 700;
   color: #fff;
   line-height: 1.2;
-`;
-
-const KPICardInfo = styled.div`
-  color: #A0A3AD;
-  font-size: 16px;
-  cursor: pointer;
-  position: relative;
 `;
 
 const KPICardDesc = styled.div`
@@ -724,7 +717,7 @@ const DashboardPage: React.FC = () => {
                   </VariablesButton>
                 </KPISectionHeader>
                 <KPIGridStretched>
-                  {kpis.map((kpi, i) => (
+                  {kpis.map((kpi) => (
                     <KPICardStretched key={kpi.title}>
                       <KPICardTitleRow>
                         <KPICardTitle>{kpi.title}</KPICardTitle>
