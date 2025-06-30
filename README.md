@@ -1,46 +1,89 @@
-# Getting Started with Create React App
+# Data Visualization Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is this?
+This is a React + TypeScript dashboard for managing and visualizing EV infrastructure data. It uses Firebase for login and has a bunch of interactive UI features. I built it to practice modern React, protected routes, and some dashboard UI stuff.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
+- **Login/Logout**: Uses Firebase Auth (email/password only, no Google login).
+- **Protected Routes**: You have to log in to see the dashboard.
+- **Dashboard**: Shows some KPIs, scenario results, and charts (right now, the data is mostly fake/mock).
+- **Edit Variables Modal**: You can open a side modal to search, autofill, and rerun variables.
+- **Custom Sidebar**: The left menu uses SVG icons from the assets folder (not a library).
+- **Responsive**: Works on desktop and mobile, dark theme.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How to run it locally
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. **Clone the repo:**
+   ```bash
+   git clone <your-repo-url>
+   cd datavisulaizationasse
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Set up Firebase:**
+   - Either update `src/firebase.ts` with your Firebase project config, or create a `.env` file with:
+     ```
+     VITE_FIREBASE_API_KEY=your_api_key
+     VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+     VITE_FIREBASE_PROJECT_ID=your_project_id
+     VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+     VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+     VITE_FIREBASE_APP_ID=your_app_id
+     ```
+   - Make sure you have at least one user in Firebase Auth (email/password).
+4. **Start the dev server:**
+   ```bash
+   npm run dev
+   ```
+5. **Go to** [http://localhost:5173](http://localhost:5173) and log in.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Why I did things this way
+- **Firebase Auth**: I started with Firestore for login, but switched to Firebase Auth because it's safer and easier for real apps.
+- **SVG Icons**: Used SVGs in `/src/assets` for the sidebar so I could match the design exactly.
+- **React Context**: Used for auth state, didn't bother with Redux or Zustand since the app is small.
+- **Styled-components**: For CSS-in-JS and easy theming.
+- **No registration**: Only login is supported. You have to add users in Firebase Console.
+- **No Google login**: Just wanted to keep it simple.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## What doesn't work / Limitations
+- **No registration**: You can't sign up from the app, only log in.
+- **Fake data**: The dashboard and variables are just mock data for now.
+- **No server-side validation**: All checks are in the frontend.
+- **No tests**: Didn't have time to add unit tests.
+- **Accessibility**: I didn't do a full accessibility audit.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How long did it take?
+- Setup & Firebase: ~1 hour
+- Auth, login, protected routes: ~1.5 hours
+- Dashboard UI: ~2 hours
+- Edit Variables modal: ~2 hours
+- Sidebar icons & styling: ~1 hour
+- Bug fixes & polish: ~1.5 hours
+- **Total:** About 9 hours
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Project structure (main files)
+- `src/pages/DashboardPage.tsx` — Dashboard UI
+- `src/pages/LoginPage.tsx` — Login form
+- `src/context/AuthContext.tsx` — Auth logic
+- `src/components/EditVariablesPanel.tsx` — The slide-over modal
+- `src/assets/` — SVG icons
+- `src/firebase.ts` — Firebase config
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Anything else?
+If you have questions or want to see more features, just ask!
