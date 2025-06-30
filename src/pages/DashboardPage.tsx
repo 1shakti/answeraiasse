@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { FiMenu, FiSearch, FiPlus, FiInfo, FiMoreHorizontal } from 'react-icons/fi';
 import styled from 'styled-components';
 import EditVariablesPanel from '../components/EditVariablesPanel';
 import accordionArrow from '../assets/accordion-arrow.svg';
@@ -334,7 +333,7 @@ const KPICardTitle = styled.div`
   line-height: 1.2;
 `;
 
-const KPICardInfo = styled(FiInfo)`
+const KPICardInfo = styled.div`
   color: #A0A3AD;
   font-size: 16px;
   cursor: pointer;
@@ -517,7 +516,7 @@ const DashboardPage: React.FC = () => {
             transition: 'all 0.2s'
           }}
         >
-          <FiMenu size={22} color="#fff" />
+          {null}
         </div>
         {/* Main icons */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 32, justifyContent: 'flex-start' }}>
@@ -638,7 +637,7 @@ const DashboardPage: React.FC = () => {
           </Tabs>
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
             <SearchBar>
-              <FiSearch size={18} color="#fff" />
+              {null}
               <SearchInput placeholder="Search" />
             </SearchBar>
           </div>
@@ -694,7 +693,7 @@ const DashboardPage: React.FC = () => {
                       The best found configuration based on profit is characterized by 11 zones (max) with charging stations and 48 total number of poles.
                       <ScenarioBoxRight>
                         <IconButton style={{ color: '#D6FF4F', borderColor: 'transparent', background: 'transparent', width: 28, height: 28 }}>
-                          <FiMoreHorizontal size={16} />
+                          {null}
                         </IconButton>
                       </ScenarioBoxRight>
                     </ScenarioBox>
@@ -702,7 +701,7 @@ const DashboardPage: React.FC = () => {
                       The best found configuration based on satisfied demand is characterized by 11 zones (max) with charging stations and 48 total number of poles.
                       <ScenarioBoxRight>
                         <IconButton style={{ color: '#D6FF4F', borderColor: 'transparent', background: 'transparent', width: 28, height: 28 }}>
-                          <FiMoreHorizontal size={16} />
+                          {null}
                         </IconButton>
                       </ScenarioBoxRight>
                     </ScenarioBox>
@@ -721,7 +720,7 @@ const DashboardPage: React.FC = () => {
                 <KPISectionHeader>
                   <KPIHeader>Key Performance Indicators</KPIHeader>
                   <VariablesButton>
-                    Variables <FiPlus style={{ marginLeft: 2 }} />
+                    Variables
                   </VariablesButton>
                 </KPISectionHeader>
                 <KPIGridStretched>
