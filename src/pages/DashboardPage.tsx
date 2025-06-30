@@ -492,21 +492,6 @@ const DashboardPage: React.FC = () => {
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const profileRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
-  const [menuLeft, setMenuLeft] = useState<'50%' | number>('50%');
-  const [menuTransform, setMenuTransform] = useState<string>('translateX(-50%)');
-
-  useEffect(() => {
-    if (showProfileMenu && menuRef.current) {
-      const rect = menuRef.current.getBoundingClientRect();
-      if (rect.left < 8) {
-        setMenuLeft(8);
-        setMenuTransform('none');
-      } else {
-        setMenuLeft('50%');
-        setMenuTransform('translateX(-50%)');
-      }
-    }
-  }, [showProfileMenu]);
 
   const handleLogout = async () => {
     setShowProfileMenu(false);

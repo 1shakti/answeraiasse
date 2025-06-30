@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { FiX, FiSearch, FiRefreshCw } from 'react-icons/fi';
-import creationIcon from '../assets/creation.svg';
 import accordionArrow from '../assets/accordion-arrow.svg';
 import star from '../assets/star.svg';
 
@@ -91,22 +90,6 @@ const ModalContent = styled.div`
   flex: 1;
   min-height: 0;
   padding: 0 0 32px 0;
-`;
-
-const SearchSection = styled.div`
-  padding: 0 2.2vw;
-  background: ${COLORS.modalBg};
-  z-index: 2;
-  flex-shrink: 0;
-`;
-
-const ScrollableOptions = styled.div`
-  flex: 1;
-  overflow-y: auto;
-  padding: 1.5rem 2.2vw 2.2rem 2.2vw;
-  &::-webkit-scrollbar { display: none; }
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 `;
 
 const SearchRow = styled.div`
@@ -342,11 +325,6 @@ const categories = [
     ],
   },
 ];
-
-function getAllVariables() {
-  // Flatten all variables for hover logic
-  return categories.flatMap(cat => cat.variables.map(v => ({ ...v, category: cat.name })));
-}
 
 export default function EditVariablesPanel({ onClose = () => {} }) {
   const [primaryOpen, setPrimaryOpen] = useState(true);
