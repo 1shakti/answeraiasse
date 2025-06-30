@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { FiX, FiSearch, FiRefreshCw } from 'react-icons/fi';
 import accordionArrow from '../assets/accordion-arrow.svg';

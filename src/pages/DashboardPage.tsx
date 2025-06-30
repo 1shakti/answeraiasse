@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
-import SlideOver from '../components/SlideOver';
-import DashboardChart from '../components/DashboardChart';
-import { FiHome, FiBell, FiCalendar, FiCloud, FiSettings, FiSearch, FiEdit2, FiMenu, FiUser, FiRefreshCw, FiDownload, FiChevronUp, FiMoreHorizontal, FiPlus, FiInfo, FiZap, FiTruck, FiMapPin } from 'react-icons/fi';
+import { FiMenu, FiSearch, FiPlus, FiInfo, FiMoreHorizontal } from 'react-icons/fi';
 import styled from 'styled-components';
 import EditVariablesPanel from '../components/EditVariablesPanel';
 import accordionArrow from '../assets/accordion-arrow.svg';
@@ -17,6 +15,7 @@ import settingIcon from '../assets/setting.svg';
 import timelistIcon from '../assets/timelist.svg';
 import profileIcon from '../assets/profile.svg';
 import homeIcon from '../assets/home.svg';
+import DashboardChart from '../components/DashboardChart';
 
 const kpis = [
   { title: 'Infrastructure Units', value: '€421.07', desc: 'This describes variable one and what the shown data means.' },
@@ -39,7 +38,7 @@ const tabs = [
   'Parking',
 ];
 
-const dashboardTabIcons = [FiZap, FiTruck, FiMapPin];
+const dashboardTabIcons = ["", "", ""];
 
 const COLORS = {
   background: '#181A20',
@@ -651,7 +650,7 @@ const DashboardPage: React.FC = () => {
             <DashboardCardTitleRow>
               <DashboardCardTitleLeft>
                 <DashboardCardIcon>
-                  {React.createElement(dashboardTabIcons[activeTab], { size: 28, color: '#fff' })}
+                  {null}
                 </DashboardCardIcon>
                 <DashboardCardTitle>{tabs[activeTab]}</DashboardCardTitle>
               </DashboardCardTitleLeft>
