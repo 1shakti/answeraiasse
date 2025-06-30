@@ -133,37 +133,7 @@ const MainContent = styled.main`
   gap: 16px;
 `;
 
-const TitleRow = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 24px;
-`;
 
-const TitleLeft = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-`;
-
-const TitleIcon = styled.span`
-  font-size: 28px;
-  color: #fff;
-`;
-
-const TitleText = styled.h1`
-  font-size: 28px;
-  font-weight: 700;
-  color: #fff;
-  margin: 0;
-  line-height: 1.2;
-`;
-
-const TitleRight = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-`;
 
 const IconButton = styled.button`
   background: #181A20;
@@ -277,22 +247,7 @@ const KPISectionHeader = styled.div`
   margin-bottom: 8px;
 `;
 
-const ChartCard = styled.div`
-  background: ${COLORS.card};
-  border: 1.5px solid ${COLORS.border};
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-  padding: 18px 0;
-  height: 100%;
-  min-height: 340px;
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin: 0;
-`;
+
 
 const KPIGrid = styled.div`
   display: grid;
