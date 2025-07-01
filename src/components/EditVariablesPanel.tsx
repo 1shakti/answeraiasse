@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
-import { FiX, FiSearch, FiRefreshCw } from 'react-icons/fi';
+import { FiX, FiSearch } from 'react-icons/fi';
 import accordionArrow from '../assets/accordion-arrow.svg';
 import star from '../assets/star.svg';
 import reloadIcon from '../assets/reload.svg';
