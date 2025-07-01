@@ -462,7 +462,11 @@ const DashboardPage: React.FC = () => {
             transition: 'all 0.2s'
           }}
         >
-          {null}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+            <div style={{ width: 18, height: 2, backgroundColor: '#fff', borderRadius: 1 }}></div>
+            <div style={{ width: 18, height: 2, backgroundColor: '#fff', borderRadius: 1 }}></div>
+            <div style={{ width: 18, height: 2, backgroundColor: '#fff', borderRadius: 1 }}></div>
+          </div>
         </div>
         {/* Main icons */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 32, justifyContent: 'flex-start' }}>
@@ -494,7 +498,7 @@ const DashboardPage: React.FC = () => {
                   if (!isActive) (e.currentTarget as HTMLElement).style.background = 'transparent';
                 }}
               >
-                <img src={icon} alt={label} style={{ width: 22, height: 22, filter: isActive ? 'none' : 'invert(54%) sepia(6%) saturate(355%) hue-rotate(37deg) brightness(92%) contrast(87%)', transition: 'filter 0.2s', }} />
+                <img src={icon} alt={label} style={{ width: 22, height: 22, filter: isActive ? 'brightness(0) invert(1)' : 'invert(54%) sepia(6%) saturate(355%) hue-rotate(37deg) brightness(92%) contrast(87%)', transition: 'filter 0.2s', }} />
               </div>
             );
           })}
@@ -525,7 +529,7 @@ const DashboardPage: React.FC = () => {
             }}
             onClick={() => setShowProfileMenu((v) => !v)}
           >
-            <img src={profileIcon} alt="profile" style={{ width: 22, height: 22, filter: showProfileMenu ? 'none' : 'invert(54%) sepia(6%) saturate(355%) hue-rotate(37deg) brightness(92%) contrast(87%)', transition: 'filter 0.2s', }} />
+            <img src={profileIcon} alt="profile" style={{ width: 22, height: 22, filter: showProfileMenu ? 'brightness(0) invert(1)' : 'invert(54%) sepia(6%) saturate(355%) hue-rotate(37deg) brightness(92%) contrast(87%)', transition: 'filter 0.2s', }} />
             {showProfileMenu && (
               <div
                 ref={menuRef}
@@ -583,7 +587,9 @@ const DashboardPage: React.FC = () => {
           </Tabs>
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
             <SearchBar>
-              {null}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="#A0A3AD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
               <SearchInput placeholder="Search" />
             </SearchBar>
           </div>
